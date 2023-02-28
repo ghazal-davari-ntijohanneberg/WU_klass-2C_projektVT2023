@@ -8,27 +8,40 @@
 
 #grid_wrapper{
   display: grid;
+  height: 100vh;
   grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
-  grid-template-rows: 100px 700px 700px 400px;
+  grid-template-rows:  100px auto 500px 500px 200px;
   grid-template-areas:
-  "nav nav nav"
   "hea hea hea"
-  "ar1 ar1 ar1"
+  "sec sec sec"
+  "se1 se1 se1"
+  "se2 se2 se2"
   "foo foo foo";
 }
 
 body{
   font-family: 'Playfair Display', serif;
+  line-height: 1.5;
+  height: 100vh;
+  display: flex;
 }
 
 header{
   grid-area: hea;
+  display: flex;
+}
+
+
+#plane_picture{
+  grid-area: sec;
+  display: flex;
+  flex-direction: column;
   background-image: url(https://flightio.com/Images/Home/flight.jpg?v20211003);
-  min-height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 500px;
 }
 
 nav{
@@ -36,7 +49,6 @@ nav{
   height: auto;
   grid-area: nav;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 } 
 
@@ -75,6 +87,10 @@ nav{
   transition: all 0.5s;
 }
 
+#link_list a:hover{
+  background-color: #660d60;
+  transition: 1s;
+}
 #burger {
   margin-right: 50px;
   cursor: pointer;
@@ -96,7 +112,7 @@ nav{
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-a:hover, a.active{
+a.active{
   background-color: #1b9bff;
   color: black;
   transition: 0.7s;
@@ -121,19 +137,50 @@ label.logo{
 
 footer{
   grid-area: foo;
-  background-color: blue;
+  background-color: lightpink; 
 }
 
-#article_1{
-  grid-area: ar1;
+ul{
+  list-style: none;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#info_bars{
+  display: flex;
   flex-direction: column;
-  justify-items: center;
-  justify-content: space-around;
+}
+
+#section_how{
+  grid-area: se1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#info{
+  display: flex;
+  height: 100px;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
 #section_tours{
-  grid-area: sec;
-  background-color: rgb(33, 105, 105);
+  grid-area: se2;
+  flex-direction: column;
+  display: flex;
+}
+
+.mySlides {
+  display:flex;
+  flex-wrap: wrap;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .tours{
@@ -141,18 +188,134 @@ footer{
   text-align: center;
   font-size: 30px;
   background-color: antiquewhite;
+  border-radius: 40px;
 }
 
-@media (min-width: 700px)  {
+footer{
+  grid-area: foo;
+  display: flex;
+  position: relative;
+  padding: 20px 50px;
+  width: 100%;
+  background-color: #3586ff; 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ul,
+footer .menu{
+  list-style: none;
+}
+
+footer .social-links, 
+footer .menu{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  line-height: 40px;
+  flex-wrap: wrap;
+}
+
+footer .social-links li a{
+  font-size: 2em;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+footer .social-links li a:hover{
+  transform: translateY(-10px);
+}
+
+footer .menu li a{
+  font-size: 2.5em;
+  color: white;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+footer .menu li a:hover{
+  opacity: 1;
+}
+
+footer .wave{
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("../img/wave.png");
+  background-size: 1000px 100px;
+}
+
+footer .wave#wave1{
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2{
+  z-index: 1000;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave_02 4s linear infinite;
+}
+
+footer .wave#wave3{
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWave 3s linear infinite;
+}
+
+footer .wave#wave4{
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave{
+  0%
+  {
+    background-position-x: 1000px;
+  }
+  100%
+  {
+    background-position-x: 0px;
+  }
+}
+
+@keyframes animateWave_02{
+  0%
+  {
+    background-position-x: 0px;
+  }
+  100%
+  {
+    background-position-x: 1000px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  
   #grid_wrapper{
     display: grid;
     grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
-    grid-template-rows: 100px 700px 500px 500px 500px;
+    grid-template-rows: 100px 400px auto auto auto;
     grid-template-areas: 
-    "nav nav nav"
     "hea hea hea"
-    "ar1 ar1 ar1"
     "sec sec sec"
+    "se1 se1 se1"
+    "se2 se2 se2"
     "foo foo foo";
   }
 
@@ -184,8 +347,14 @@ label.logo{
   font-weight: bold;
 }
 
-#article_1{
-  grid-area: ar1;
+#section_how{
+  grid-area: se1;
+  flex-direction: column;
+  text-align: center;
+}
+
+#info_bars{
+  display: flex;
   flex-direction: row;
 }
 
@@ -198,14 +367,18 @@ label.logo{
 
 footer{
   grid-area: foo;
-  background-color: blue;
+  display: flex;
+  position: relative;
+  padding: 20px 50px;
+  width: 100%;
+  background-color: #3586ff; 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+footer .menu li a{
+  font-size: 3.2em;
 }
 
-.auto-grid {
-  --auto-grid-min-size: 16rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
-  grid-gap: 1rem;
 }
