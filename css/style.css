@@ -10,7 +10,7 @@
   display: grid;
   height: 100vh;
   grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
-  grid-template-rows:  100px auto 500px 500px 200px;
+  grid-template-rows:  auto auto auto auto auto;
   grid-template-areas:
   "hea hea hea"
   "sec sec sec"
@@ -41,7 +41,62 @@ header{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 500px;
+  text-align: center;
+}
+
+#plane_picture .intro-text{
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+#plane_picture .intro-text .intro-lead-in{
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 22px;
+}
+
+#plane_picture .intro-text .intro-heading{
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.pulse{
+  background-color: pink;
+  padding: 1em 2em;
+  transition: 0.25s;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+.pulse a:hover, 
+.pulse a:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+.pulse{
+  -webkit-animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    @include transform(scale(.9));
+  }
+  70% {
+    @include transform(scale(1));
+    box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+  }
+    100% {
+    @include transform(scale(.9));
+    box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+  }
 }
 
 nav{
@@ -152,14 +207,19 @@ ul{
 #info_bars{
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 #section_how{
   grid-area: se1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+
+#h2_section_how{
+  margin-bottom: 80px;
 }
 
 #info{
@@ -310,7 +370,7 @@ footer .wave#wave4{
   #grid_wrapper{
     display: grid;
     grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
-    grid-template-rows: 100px 400px auto auto auto;
+    grid-template-rows: 100px 400px 600px auto auto;
     grid-template-areas: 
     "hea hea hea"
     "sec sec sec"
@@ -347,10 +407,26 @@ label.logo{
   font-weight: bold;
 }
 
+#Plane_picture .intro-text{
+  padding-top: 300px;
+  padding-bottom: 200px;
+}
+
+#plane_picture .intro-text .intro-lead-in{
+  margin-bottom: 25px;
+  font-size: 40px;
+  font-style: italic;
+  line-height: 40px;
+}
+
 #section_how{
   grid-area: se1;
   flex-direction: column;
   text-align: center;
+}
+
+#h2_section_how{
+  margin-bottom: 80px;
 }
 
 #info_bars{
