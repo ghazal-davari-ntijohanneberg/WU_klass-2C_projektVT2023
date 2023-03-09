@@ -31,12 +31,168 @@ header{
   display: flex;
 }
 
+.navbar-brand{
+  color: white;
+}
+
+#section_header{
+  display: flex;
+  align-items: center;
+}
+
+:root {
+	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
+}
+
+body, button, input {
+	font: 1em Hind, sans-serif;
+	line-height: 1.5em;
+}
+
+body, input {
+	color: #171717;
+}
+
+body, .search-bar {
+	display: flex;
+}
+
+.search-bar input,
+.search-btn, 
+.search-btn:before, 
+.search-btn:after {
+	transition: all 0.25s ease-out;
+}
+
+.search-bar input,
+.search-btn {
+	width: 3em;
+	height: 3em;
+}
+
+.search-bar input:invalid:not(:focus),
+.search-btn {
+	cursor: pointer;
+}
+
+.search-bar,
+.search-bar input:focus,
+.search-bar input:valid  {
+	width: 100%;
+}
+
+.s
+earch-bar input:focus,
+.search-bar input:not(:focus) + .search-btn:focus {
+	outline: transparent;
+}
+
+.search-bar {
+	margin: auto;
+	padding: 1.5em;
+	justify-content: center;
+	max-width: 30em;
+}
+
+.search-bar input {
+	background: transparent;
+	border-radius: 1.5em;
+	box-shadow: 0 0 0 0.4em #171717 inset;
+	padding: 0.75em;
+	transform: translate(0.5em,0.5em) scale(0.5);
+	transform-origin: 100% 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.search-bar input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+.search-bar input:focus,
+.search-bar input:valid {
+	background: #fff;
+	border-radius: 0.375em 0 0 0.375em;
+	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+	transform: scale(1);
+}
+
+.search-btn {
+	background: #171717;
+	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+	padding: 0.75em;
+	position: relative;
+	transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+	transform-origin: 0 50%;
+}
+
+.search-btn:before, 
+.search-btn:after {
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+
+.search-btn:before {
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+	top: 0.75em;
+	left: 0.75em;
+	width: 1.2em;
+	height: 1.2em;
+}
+
+.search-btn:after {
+	background: #f1f1f1;
+	border-radius: 0 0.25em 0.25em 0;
+	top: 51%;
+	left: 51%;
+	width: 0.75em;
+	height: 0.25em;
+	transform: translate(0.2em,0) rotate(45deg);
+	transform-origin: 0 50%;
+}
+
+.search-btn span {
+	display: inline-block;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+/* Active state */
+.search-bar input:focus + .search-btn,
+.search-bar input:valid + .search-btn {
+	background: #2762f3;
+	border-radius: 0 0.375em 0.375em 0;
+	transform: scale(1);
+}
+
+.search-bar input:focus + .search-btn:before, 
+.search-bar input:focus + .search-btn:after,
+.search-bar input:valid + .search-btn:before, 
+.search-bar input:valid + .search-btn:after {
+	opacity: 1;
+}
+
+.search-bar input:focus + .search-btn:hover,
+.search-bar input:valid + .search-btn:hover,
+.search-bar input:valid:not(:focus) + .search-btn:focus {
+	background: #0c48db;
+}
+
+.search-bar input:focus + .search-btn:active,
+.search-bar input:valid + .search-btn:active {
+	transform: translateY(1px);
+}
 
 #plane_picture{
   grid-area: sec;
   display: flex;
   flex-direction: column;
-  background-image: url(https://flightio.com/Images/Home/flight.jpg?v20211003);
+  background-image: url(..//img/plane.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -65,37 +221,40 @@ header{
 }
 
 .pulse{
-  background-color: pink;
-  padding: 1em 2em;
-  transition: 0.25s;
-  border: 2px solid;
-  font: inherit;
-  line-height: 1;
+  position: relative;
+  top: 50%;
+  left: 50%;
   margin: 0.5em;
-  padding: 1em 2em;
+  margin-left: -50px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100px;
+  letter-spacing: -1px;
+  border: 2px solid;
+  background: pink;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(rgb(162, 42, 62), .5);
 }
 
-.pulse a:hover, 
-.pulse a:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
+.pulse:hover {
+  animation: pulse 1.5s;
 }
 
-.pulse{
-  -webkit-animation: none;
-}
-
-@-webkit-keyframes pulse {
+@keyframes pulse {
   0% {
-    @include transform(scale(.9));
+    transform: scale(.85);
   }
   70% {
-    @include transform(scale(1));
-    box-shadow: 0 0 0 50px rgba(#5a99d4, 0);
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(#d45ab7, 0);
   }
     100% {
-    @include transform(scale(.9));
-    box-shadow: 0 0 0 0 rgba(#5a99d4, 0);
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(#d45ab7, 0);
   }
 }
 
@@ -110,7 +269,6 @@ nav{
 #link_list a {
   text-decoration: none;
   letter-spacing: 0.1875rem;
-  color: rgb(240, 237, 235);
   font-weight: bold;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.25rem;
@@ -128,7 +286,7 @@ nav{
 }
 
 #link_list {
-  background-color: rgb(211, 150, 220);
+  background-color: #bde0fe;
   height: 400px;
   width: 200px;
   position: absolute;
@@ -137,15 +295,16 @@ nav{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   list-style: none;
   transition: all 0.5s;
 }
 
 #link_list a:hover{
-  background-color: #660d60;
+  background-color: #a2d2ff;
   transition: 1s;
 }
+
 #burger {
   margin-right: 50px;
   cursor: pointer;
@@ -171,8 +330,11 @@ a.active{
   background-color: #1b9bff;
   color: black;
   transition: 0.7s;
-  background-color: #660d60;
-  color: rgb(255, 255, 255);
+  background-color: #a2d2ff;
+}
+
+.navbar-brand{
+  color: black;
 }
 
 nav a{
@@ -182,12 +344,6 @@ nav a{
   padding: 10px 16px;
   text-decoration: none;
   font-size: 17px;
-}
-  
-label.logo{
-  font-size: 30px;
-  padding-left: 50px;
-  color: white;
 }
 
 footer{
@@ -365,18 +521,62 @@ footer .wave#wave4{
   }
 }
 
+
+#grid_tours{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr;
+  grid-template-rows: 100px 400px 400px 400px auto;
+  grid-template-areas: 
+  "hea hea hea hea"
+  "sec sec sec sec"
+  "se1 se1 se1 se1"
+  "se2 se2 se2 se2"
+  "foo foo foo foo";
+}
+
+#section_attractions{
+  grid-area: sec;
+  background-color: pink;
+}
+
+#section_destinations{
+  grid-area: se1;
+  background-color: yellow;
+}
+
+#section_tour{
+  grid-area: se2;
+  background-color: lightblue;
+}
+
+
 @media screen and (min-width: 700px) {
   
   #grid_wrapper{
-    display: grid;
-    grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
-    grid-template-rows: 100px 400px 600px auto auto;
-    grid-template-areas: 
-    "hea hea hea"
-    "sec sec sec"
-    "se1 se1 se1"
-    "se2 se2 se2"
-    "foo foo foo";
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
+  grid-template-rows: 100px 400px 600px auto auto;
+  grid-template-areas: 
+  "hea hea hea"
+  "sec sec sec"
+  "se1 se1 se1"
+  "se2 se2 se2"
+  "foo foo foo";
+  height: 100vh;
+  }
+
+  #grid_tours{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr;
+  grid-template-rows: 100px 400px 400px 400px auto;
+  grid-template-areas: 
+  "hea hea hea hea"
+  "sec sec sec sec"
+  "se1 se1 se1 se1"
+  "se2 se2 se2 se2"
+  "foo foo foo foo";
   }
 
   #burger{
@@ -389,22 +589,12 @@ footer .wave#wave4{
   top: 0px;
   flex-direction: row;
   transition: all .5s;
-  line-height: 80px;
-  margin: 0 5px;
   font-size: 16px;
   line-height: 30px;
 }
 
 .link_list_visible {
   transform: translateY(0px)
-}
-
-label.logo{
-  color: white;
-  font-size: 40px;
-  line-height: 80px;
-  padding: 0 100px;
-  font-weight: bold;
 }
 
 #Plane_picture .intro-text{
