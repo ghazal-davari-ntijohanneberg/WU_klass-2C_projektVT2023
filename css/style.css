@@ -1,60 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
 *{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
 #grid_wrapper{
   display: grid;
   height: 100vh;
-  grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
+  grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr;
   grid-template-rows:  auto auto auto auto auto;
   grid-template-areas:
-  "hea hea hea"
-  "sec sec sec"
-  "se1 se1 se1"
-  "se2 se2 se2"
-  "foo foo foo";
+  "hea hea hea hea"
+  "sec sec sec sec"
+  "se1 se1 se1 se1"
+  "se2 se2 se2 se2"
+  "foo foo foo foo";
 }
 
-body{
-  font-family: 'Playfair Display', serif;
-  line-height: 1.5;
+h2{
+  font-family: 'playfair display';
+}
+
+body {
   height: 100vh;
-  display: flex;
+  font-family: 'Playfair Display',serif;
 }
 
 header{
   grid-area: hea;
   display: flex;
-}
-
-.navbar-brand{
-  color: white;
-}
-
-#section_header{
-  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
   align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo{
+  color: #161313;
+  font-size: 35px;
+  font-weight: 600;
+  float: left;
+}
+
+#link_list a{
+  text-decoration: none;
+  letter-spacing: 0.1875rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+#link_list a:hover{
+  background-color: #fff;
+  transition: .5s all ease;
+}
+
+#burger div{
+  width: 25px;
+  height: 3px;
+  background-color: rgb(5, 9, 5);
+  margin: 5px;
+  border-radius: 20%;
+  transition: all 0.5s;
+}
+
+#link_list {
+  background-color: rgb(255, 251, 194);
+  height: 400px;
+  position: absolute;
+  top: -400px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  transition: all 0.5s;
+}
+
+#burger {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.link_list_visible {
+  transform: translateY(500px)
+}
+
+.burger_in_x_form #burger_line_2 {
+  opacity: 0;
+}
+
+.burger_in_x_form #burger_line_1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger_in_x_form #burger_line_3 {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 :root {
 	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
 }
 
-body, button, input {
-	font: 1em Hind, sans-serif;
+header, button, input {
+	font: 1em;
 	line-height: 1.5em;
 }
 
-body, input {
+input {
 	color: #171717;
 }
 
-body, .search-bar {
+header, .search-bar {
 	display: flex;
+  margin-left: 500px;
+  margin-bottom: 100px;
 }
 
 .search-bar input,
@@ -78,7 +146,7 @@ body, .search-bar {
 .search-bar,
 .search-bar input:focus,
 .search-bar input:valid  {
-	width: 100%;
+	width: 50%;
 }
 
 .s
@@ -89,7 +157,6 @@ earch-bar input:focus,
 
 .search-bar {
 	margin: auto;
-	padding: 1.5em;
 	justify-content: center;
 	max-width: 30em;
 }
@@ -158,7 +225,7 @@ earch-bar input:focus,
 .search-btn span {
 	display: inline-block;
 	overflow: hidden;
-	width: 1px;
+	width: 10px;
 	height: 1px;
 }
 
@@ -209,12 +276,14 @@ earch-bar input:focus,
   margin-bottom: 25px;
   font-size: 22px;
   font-style: italic;
+  font-family: 'Playfair Display', serif;
   line-height: 22px;
 }
 
 #plane_picture .intro-text .intro-heading{
   margin-bottom: 25px;
   text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
   font-size: 50px;
   font-weight: 700;
   line-height: 50px;
@@ -235,9 +304,9 @@ earch-bar input:focus,
   line-height: 100px;
   letter-spacing: -1px;
   border: 2px solid;
-  background: pink;
+  background: rgb(234, 228, 59);
   cursor: pointer;
-  box-shadow: 0 0 0 0 rgba(rgb(162, 42, 62), .5);
+  box-shadow: 0 0 0 0 rgba(rgb(162, 84, 42), .5);
 }
 
 .pulse:hover {
@@ -258,101 +327,9 @@ earch-bar input:focus,
   }
 }
 
-nav{
-  float: right;
-  height: auto;
-  grid-area: nav;
-  display: flex;
-  align-items: center;
-} 
-
-#link_list a {
-  text-decoration: none;
-  letter-spacing: 0.1875rem;
-  font-weight: bold;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  border-radius: 3px;
-}
-
-#burger div {
-  width: 25px;
-  height: 3px;
-  background-color: rgb(53, 13, 58);
-  margin: 5px;
-  border-radius: 20%;
-  transition: all 0.5s;
-}
-
-#link_list {
-  background-color: #bde0fe;
-  height: 400px;
-  width: 200px;
-  position: absolute;
-  top: -400px;
-  right: 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  transition: all 0.5s;
-}
-
-#link_list a:hover{
-  background-color: #a2d2ff;
-  transition: 1s;
-}
-
-#burger {
-  margin-right: 50px;
-  cursor: pointer;
-}
-
-.link_list_visible {
-  transform: translateY(500px)
-}
-
-.burger_in_x_form #burger_line_2 {
-  opacity: 0;
-}
-
-.burger_in_x_form #burger_line_1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger_in_x_form #burger_line_3 {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-a.active{
-  background-color: #1b9bff;
-  color: black;
-  transition: 0.7s;
-  background-color: #a2d2ff;
-}
-
-.navbar-brand{
-  color: black;
-}
-
-nav a{
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 10px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
 footer{
   grid-area: foo;
   background-color: lightpink; 
-}
-
-ul{
-  list-style: none;
 }
 
 .row{
@@ -376,14 +353,6 @@ ul{
 
 #h2_section_how{
   margin-bottom: 80px;
-}
-
-#info{
-  display: flex;
-  height: 100px;
-  align-items: center;
-  text-align: center;
-  position: relative;
 }
 
 #section_tours{
@@ -525,10 +494,10 @@ footer .wave#wave4{
 #grid_tours{
   display: grid;
   height: 100vh;
-  grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 100px 400px 400px 400px auto;
   grid-template-areas: 
-  "hea hea hea hea"
+  "nav nav nav nav"
   "sec sec sec sec"
   "se1 se1 se1 se1"
   "se2 se2 se2 se2"
@@ -537,114 +506,175 @@ footer .wave#wave4{
 
 #section_attractions{
   grid-area: sec;
-  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#attraction_pic{
+  width: 500px;
+  height: 300px;
+  border-radius: 20px;
 }
 
 #section_destinations{
   grid-area: se1;
-  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-#section_tour{
+#article_destinations{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.destination_bttn{
+  background-color: white;
+  border: 2px solid rgb(154, 153, 153);
+  border-radius: 10px;
+  margin: 50px;
+  padding: 15px 60px;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 2px rgb(67, 61, 61);
+}
+
+.destination_bttn:hover{
+  background-color:#eeeadd;
+  transition: 0.6s;
+}
+
+.destination_bttn:focus{
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #dab455;
+}
+
+#section_categories{
   grid-area: se2;
   background-color: lightblue;
+
 }
 
 
 @media screen and (min-width: 700px) {
-  
   #grid_wrapper{
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
-  grid-template-rows: 100px 400px 600px auto auto;
-  grid-template-areas: 
-  "hea hea hea"
-  "sec sec sec"
-  "se1 se1 se1"
-  "se2 se2 se2"
-  "foo foo foo";
-  height: 100vh;
-  }
-
-  #grid_tours{
-  display: grid;
-  height: 100vh;
   grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr;
-  grid-template-rows: 100px 400px 400px 400px auto;
+  grid-template-rows: 100px 400px 600px auto auto;
   grid-template-areas: 
   "hea hea hea hea"
   "sec sec sec sec"
   "se1 se1 se1 se1"
   "se2 se2 se2 se2"
   "foo foo foo foo";
+  height: 100vh;
   }
 
-  #burger{
+  #grid_tours{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 400px 400px 400px auto;
+    grid-template-areas: 
+    "hea hea hea hea"
+    "sec sec sec sec"
+    "se1 se1 se1 se1"
+    "se2 se2 se2 se2"
+    "foo foo foo foo";
+  }
+
+  #grid_about{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 400px 400px 400px auto;
+    grid-template-areas: 
+    "hea hea hea hea"
+    "sec sec sec sec"
+    "se1 se1 se1 se1"
+    "se2 se2 se2 se2"
+    "foo foo foo foo";
+
+  }
+
+  body {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.5;
+    display: flex;
+  }
+  
+  #burger {
     display: none;
   }
 
   #link_list {
-  height: 100px;
-  width: 100%;
-  top: 0px;
-  flex-direction: row;
-  transition: all .5s;
-  font-size: 16px;
-  line-height: 30px;
+    height: 100px;
+    margin-right: 25%;
+    top: 0px;
+    transition: none;
+    background-color: red;
+    width: 700px;
+  }
+
+  .link_list_visible {
+    transform: translateY(0px)
+  }
+
+  #Plane_picture .intro-text{
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+
+  #plane_picture .intro-text .intro-lead-in{
+    margin-bottom: 25px;
+    font-size: 40px;
+    font-style: italic;
+    line-height: 40px;
+  }
+
+  #section_how{
+    grid-area: se1;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #h2_section_how{
+    margin-bottom: 80px;
+  }
+
+  #info_bars{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tours{
+    padding: 50px;
+    text-align: center;
+    font-size: 15px;
+    background-color: antiquewhite;
 }
 
-.link_list_visible {
-  transform: translateY(0px)
-}
+  footer{
+    grid-area: foo;
+    display: flex;
+    position: relative;
+    padding: 20px 50px;
+    width: 100%;
+    background-color: #3586ff; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-#Plane_picture .intro-text{
-  padding-top: 300px;
-  padding-bottom: 200px;
-}
-
-#plane_picture .intro-text .intro-lead-in{
-  margin-bottom: 25px;
-  font-size: 40px;
-  font-style: italic;
-  line-height: 40px;
-}
-
-#section_how{
-  grid-area: se1;
-  flex-direction: column;
-  text-align: center;
-}
-
-#h2_section_how{
-  margin-bottom: 80px;
-}
-
-#info_bars{
-  display: flex;
-  flex-direction: row;
-}
-
-.tours{
-  margin: 50px;
-  text-align: center;
-  font-size: 15px;
-  background-color: antiquewhite;
-}
-
-footer{
-  grid-area: foo;
-  display: flex;
-  position: relative;
-  padding: 20px 50px;
-  width: 100%;
-  background-color: #3586ff; 
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-footer .menu li a{
-  font-size: 3.2em;
-}
+  footer .menu li a{
+    font-size: 3.2em;
+  }
 
 }
