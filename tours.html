@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title> <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
     </style>
@@ -12,27 +15,15 @@
 <body>
     <div id="grid_tours">
         <header>
-            <nav> 
-                <div class="logo">Brand</div>
-                <ul
-                    id="link_list">             
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="tours.html">Tours</a></li>
+            <div class="logo">Brand</div>
+            <nav>
+                <ul>       
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="tours.html">Tours</a></li>
                     <li><a href="offers.html">Special offers</a></li>
                 </ul>
-                <div id="burger">
-                    <div id="burger_line_1"></div>
-                    <div id="burger_line_2"></div>
-                    <div id="burger_line_3"></div>
-                </div>
             </nav> 
-            <form action="" class="search-bar">
-                <input type="search" name="search" pattern=".*\S.*" required>
-                <button class="search-btn" type="submit">
-                    <span>Search</span>
-                </button>
-            </form>
-        </header>
+         </header>
         <section id="section_attractions"><img id="attraction_pic"src="img/flight.jpg" alt=""></section>
         <section id="section_destinations">     
             <h2>Popular searches</h2>
@@ -41,14 +32,42 @@
                 <button class="destination_bttn">Turkey</button>
                 <button class="destination_bttn">India</button>
                 <button class="destination_bttn">Dubai</button>
-                <button class="destination_bttn">Sweden</button>
             </article>
         </section>
         <section id="section_categories">
-            <h3>Categories</h3>
+            <h3>Flight routes</h3>
             <p>The magic ahahahaha happens here ahahaha
             </p>
-
+            <section id="categories">
+                <article class="card">
+                    <img src="img/england.jpg" alt="england" class="img_tours">
+                    <div class="container">
+                    <h4 class="h4_countries"><b>England</b></h4 class="h4_countries">
+                    <button class="read_more_bttn">Read more</button>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="img/azadi.jpg" alt="azadi" class="img_tours">
+                    <div class="container" >
+                    <h4 class="h4_countries"><b>Azadi</b></h4 class="h4_countries">
+                    <button class="read_more_bttn">Read more</button>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="img/sweden.jpg" alt="sweden" class="img_tours">
+                    <div class="container">
+                    <h4 class="h4_countries"><b>Sweden</b></h4 class="h4_countries">
+                    <button class="read_more_bttn">Read more</button>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="img/spain.jpg" alt="spain" class="img_tours">
+                    <div class="container">
+                    <h4 class="h4_countries"><b>Spain</b></h4 class="h4_countries">
+                    <button class="read_more_bttn">Read more</button>
+                    </div>
+                </article>                    
+            </section>
         </section>
         <footer>
             <div class="waves">

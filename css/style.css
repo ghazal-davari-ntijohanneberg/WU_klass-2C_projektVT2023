@@ -11,7 +11,7 @@
 #grid_wrapper{
   display: grid;
   height: 100vh;
-  grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows:  auto auto auto auto auto;
   grid-template-areas:
   "hea hea hea hea"
@@ -19,6 +19,10 @@
   "se1 se1 se1 se1"
   "se2 se2 se2 se2"
   "foo foo foo foo";
+}
+
+h1{
+  font-family: 'playfair display';
 }
 
 h2{
@@ -38,17 +42,24 @@ header{
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #bbd0ff;
 }
-
 
 .logo{
   color: #161313;
   font-size: 35px;
   font-weight: 600;
   float: left;
+  font-family: 'playfair display';
 }
 
-#link_list a{
+nav{
+  display: flex;
+  margin-right: 20%;
+}
+
+nav a{
   text-decoration: none;
   letter-spacing: 0.1875rem;
   font-weight: bold;
@@ -57,209 +68,30 @@ header{
   margin: 20px;
 }
 
-#link_list a:hover{
+nav a:hover{
   background-color: #fff;
   transition: .5s all ease;
 }
 
-#burger div{
-  width: 25px;
-  height: 3px;
-  background-color: rgb(5, 9, 5);
-  margin: 5px;
-  border-radius: 20%;
-  transition: all 0.5s;
+.active{
+  background-color: #eeeadd;
 }
 
-#link_list {
-  background-color: rgb(255, 251, 194);
-  height: 400px;
-  position: absolute;
-  top: -400px;
-  right: 0px;
+nav ul{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   list-style: none;
   transition: all 0.5s;
-}
-
-#burger {
-  margin-right: 50px;
-  cursor: pointer;
-}
-
-.link_list_visible {
-  transform: translateY(500px)
-}
-
-.burger_in_x_form #burger_line_2 {
-  opacity: 0;
-}
-
-.burger_in_x_form #burger_line_1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger_in_x_form #burger_line_3 {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-:root {
-	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
-}
-
-header, button, input {
-	font: 1em;
-	line-height: 1.5em;
-}
-
-input {
-	color: #171717;
-}
-
-header, .search-bar {
-	display: flex;
-  margin-left: 500px;
-  margin-bottom: 100px;
-}
-
-.search-bar input,
-.search-btn, 
-.search-btn:before, 
-.search-btn:after {
-	transition: all 0.25s ease-out;
-}
-
-.search-bar input,
-.search-btn {
-	width: 3em;
-	height: 3em;
-}
-
-.search-bar input:invalid:not(:focus),
-.search-btn {
-	cursor: pointer;
-}
-
-.search-bar,
-.search-bar input:focus,
-.search-bar input:valid  {
-	width: 50%;
-}
-
-.s
-earch-bar input:focus,
-.search-bar input:not(:focus) + .search-btn:focus {
-	outline: transparent;
-}
-
-.search-bar {
-	margin: auto;
-	justify-content: center;
-	max-width: 30em;
-}
-
-.search-bar input {
-	background: transparent;
-	border-radius: 1.5em;
-	box-shadow: 0 0 0 0.4em #171717 inset;
-	padding: 0.75em;
-	transform: translate(0.5em,0.5em) scale(0.5);
-	transform-origin: 100% 0;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
-.search-bar input::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-.search-bar input:focus,
-.search-bar input:valid {
-	background: #fff;
-	border-radius: 0.375em 0 0 0.375em;
-	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
-	transform: scale(1);
-}
-
-.search-btn {
-	background: #171717;
-	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
-	padding: 0.75em;
-	position: relative;
-	transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
-	transform-origin: 0 50%;
-}
-
-.search-btn:before, 
-.search-btn:after {
-	content: "";
-	display: block;
-	opacity: 0;
-	position: absolute;
-}
-
-.search-btn:before {
-	border-radius: 50%;
-	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
-	top: 0.75em;
-	left: 0.75em;
-	width: 1.2em;
-	height: 1.2em;
-}
-
-.search-btn:after {
-	background: #f1f1f1;
-	border-radius: 0 0.25em 0.25em 0;
-	top: 51%;
-	left: 51%;
-	width: 0.75em;
-	height: 0.25em;
-	transform: translate(0.2em,0) rotate(45deg);
-	transform-origin: 0 50%;
-}
-
-.search-btn span {
-	display: inline-block;
-	overflow: hidden;
-	width: 10px;
-	height: 1px;
-}
-
-/* Active state */
-.search-bar input:focus + .search-btn,
-.search-bar input:valid + .search-btn {
-	background: #2762f3;
-	border-radius: 0 0.375em 0.375em 0;
-	transform: scale(1);
-}
-
-.search-bar input:focus + .search-btn:before, 
-.search-bar input:focus + .search-btn:after,
-.search-bar input:valid + .search-btn:before, 
-.search-bar input:valid + .search-btn:after {
-	opacity: 1;
-}
-
-.search-bar input:focus + .search-btn:hover,
-.search-bar input:valid + .search-btn:hover,
-.search-bar input:valid:not(:focus) + .search-btn:focus {
-	background: #0c48db;
-}
-
-.search-bar input:focus + .search-btn:active,
-.search-bar input:valid + .search-btn:active {
-	transform: translateY(1px);
+  font-family: 'playfair display';
 }
 
 #plane_picture{
   grid-area: sec;
   display: flex;
   flex-direction: column;
-  background-image: url(..//img/plane.jpg);
+  background-image: url("..//img/planefr.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -304,7 +136,7 @@ earch-bar input:focus,
   line-height: 100px;
   letter-spacing: -1px;
   border: 2px solid;
-  background: rgb(234, 228, 59);
+  background: #bbd0ff;
   cursor: pointer;
   box-shadow: 0 0 0 0 rgba(rgb(162, 84, 42), .5);
 }
@@ -353,6 +185,7 @@ footer{
 
 #h2_section_how{
   margin-bottom: 80px;
+  margin: 'playfair display';
 }
 
 #section_tours{
@@ -372,7 +205,7 @@ footer{
   margin: 50px;
   text-align: center;
   font-size: 30px;
-  background-color: antiquewhite;
+  background-color: #bbd0ff;
   border-radius: 40px;
 }
 
@@ -495,7 +328,7 @@ footer .wave#wave4{
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100px 400px 400px 400px auto;
+  grid-template-rows: 100px 400px 400px auto auto;
   grid-template-areas: 
   "nav nav nav nav"
   "sec sec sec sec"
@@ -529,7 +362,11 @@ footer .wave#wave4{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  flex-wrap: wrap;
+}
+
+h3{
+  font-size: 40px;
 }
 
 .destination_bttn{
@@ -547,7 +384,7 @@ footer .wave#wave4{
 
 .destination_bttn:hover{
   background-color:#eeeadd;
-  transition: 0.6s;
+  transition: 0.6s all ease-in-out;
 }
 
 .destination_bttn:focus{
@@ -558,10 +395,192 @@ footer .wave#wave4{
 
 #section_categories{
   grid-area: se2;
-  background-color: lightblue;
-
+  background-color: #ffd6ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
+#categories{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 5%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  max-width: 22%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 1px 10px;
+  display: inline-block;
+}
+
+.read_more_bttn{
+  background-color: white;
+  border: 2px solid rgb(154, 153, 153);
+  border-radius: 10px;
+  margin: 50px;
+  padding: 15px 30px;
+  color: black;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 2px rgb(67, 61, 61);
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+.img_tours {
+  border-radius: 5px 5px 0 0;
+  max-width: 250px;
+  height: 300px;
+}
+
+.h4_countries{
+  width: 50px;
+}
+
+#grid_about{
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 200px 400px 400px 400px auto;
+  grid-template-areas: 
+  "hea hea hea hea"
+  "se1 se1 se1 se1"
+  "se2 se3 se4 se7"
+  "se2 se5 se6 se7"
+  "se8 se8 se8 se8"
+  "foo foo foo foo";
+}
+
+#section_1{
+  grid-area: se1;
+  background-image: url("..//img/nature.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  flex-direction: row;
+}
+
+#section_2{
+  margin-top: 3rem;
+  grid-area: se2;
+  flex-direction: column;
+}
+
+#section_3{
+  margin-top: 3rem;
+  grid-area: se3;
+  background-color: #d45ab7;
+  flex-direction: row;
+  text-align: center;
+}
+
+#section_4{
+  margin-top: 3rem;
+  grid-area: se4;
+  background-image: url("..//img/team.jpg");
+  background-position: center;
+  background-size: cover;
+  flex-direction: row;
+}
+
+#section_5{
+  grid-area: se5;
+  background-image: url("..//img/sunset.jpg");
+  background-position: center;
+  background-size: cover;
+  flex-direction: row;
+  
+}
+
+#section_6{
+  grid-area: se6;
+  background-color: aqua;
+  text-align: center;
+  flex-direction: row;
+}
+
+#section_7{
+  margin-top: 3rem;
+  grid-area: se7;
+  flex-direction: column;
+}
+
+#section_8{
+  grid-area: se8;
+}
+
+#section_team{
+  display: flex;
+  grid-area: se9;
+  background-color: #eeeadd;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#section_team2{
+  grid-area: s10;
+  display: flex;
+  flex-direction: row;
+  background-color: pink;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.team{
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.team:hover .staff {
+  opacity: 0.4;
+}
+
+.team:hover .middle {
+  opacity: 1;
+}
+
+.staff{
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.text {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
 
 @media screen and (min-width: 700px) {
   #grid_wrapper{
@@ -581,7 +600,7 @@ footer .wave#wave4{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 400px 400px 400px auto;
+    grid-template-rows: 100px 400px 400px auto auto;
     grid-template-areas: 
     "hea hea hea hea"
     "sec sec sec sec"
@@ -593,15 +612,17 @@ footer .wave#wave4{
   #grid_about{
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 400px 400px 400px auto;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 100px 300px 400px 400px 300px 600px 600px auto;
     grid-template-areas: 
     "hea hea hea hea"
-    "sec sec sec sec"
     "se1 se1 se1 se1"
-    "se2 se2 se2 se2"
+    "se2 se3 se4 se7"
+    "se2 se5 se6 se7"
+    "se8 se8 se8 se8"
+    "se9 se9 se9 se9"
+    "s10 s10 s10 s10"
     "foo foo foo foo";
-
   }
 
   body {
@@ -610,21 +631,14 @@ footer .wave#wave4{
     display: flex;
   }
   
-  #burger {
-    display: none;
-  }
-
-  #link_list {
-    height: 100px;
+  nav ul{
     margin-right: 25%;
-    top: 0px;
-    transition: none;
-    background-color: red;
     width: 700px;
+    flex-wrap: wrap;
   }
 
-  .link_list_visible {
-    transform: translateY(0px)
+ nav a{
+    color: black;
   }
 
   #Plane_picture .intro-text{
@@ -658,7 +672,6 @@ footer .wave#wave4{
     padding: 50px;
     text-align: center;
     font-size: 15px;
-    background-color: antiquewhite;
 }
 
   footer{
