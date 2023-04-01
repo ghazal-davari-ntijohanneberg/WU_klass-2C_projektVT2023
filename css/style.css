@@ -50,8 +50,26 @@ header{
   color: #161313;
   font-size: 35px;
   font-weight: 600;
-  float: left;
+  margin-left: 40%;
   font-family: 'playfair display';
+}
+
+/* .subscribe{
+  display: block;
+  margin-right: 5%;
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100px;
+  letter-spacing: -1px;
+  border: 2px double;
+  background: #bbd0ff;
+  cursor: pointer;
+  box-shadow: #eeeadd;
+} */
+
+.subscribe:hover{
+  animation: pulse 1.5s;
 }
 
 nav{
@@ -66,6 +84,7 @@ nav a{
   font-size: 1.25rem;
   text-transform: uppercase;
   margin: 20px;
+  color: black;
 }
 
 nav a:hover{
@@ -155,7 +174,7 @@ nav ul{
   }
     100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(#d45ab7, 0);
+    box-shadow: 0px 0px 2px 2px rgba(#d45ab7, 0);
   }
 }
 
@@ -451,7 +470,7 @@ h3{
 #grid_about{
   display: grid;
   width: 100vw;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
   grid-template-rows: 100px 200px 400px 400px 400px auto;
   grid-template-areas: 
   "hea hea hea hea"
@@ -459,6 +478,7 @@ h3{
   "se2 se3 se4 se7"
   "se2 se5 se6 se7"
   "se8 se8 se8 se8"
+  "se9 se9 se9 se9"
   "foo foo foo foo";
 }
 
@@ -482,9 +502,18 @@ h3{
 #section_3{
   margin-top: 3rem;
   grid-area: se3;
-  background-color: #d45ab7;
   flex-direction: row;
   text-align: center;
+  border: 5px double black;
+  flex-wrap: wrap;
+}
+
+.h2_about{
+  padding: 10px;
+}
+
+.p_about{
+  padding: 10px;
 }
 
 #section_4{
@@ -501,15 +530,14 @@ h3{
   background-image: url("..//img/sunset.jpg");
   background-position: center;
   background-size: cover;
-  flex-direction: row;
   
 }
 
 #section_6{
   grid-area: se6;
-  background-color: aqua;
   text-align: center;
   flex-direction: row;
+  border: 5px double black;
 }
 
 #section_7{
@@ -520,29 +548,33 @@ h3{
 
 #section_8{
   grid-area: se8;
+  background-image: url("../img/nature/ocean_sunset.jpg");
+  background-position: center;
+  background-size: cover;
+  flex-direction: row;
+  margin-top: 3rem;
 }
 
 #section_team{
   display: flex;
   grid-area: se9;
   background-color: #eeeadd;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
 }
 
-#section_team2{
-  grid-area: s10;
+#section_team1{
   display: flex;
   flex-direction: row;
-  background-color: pink;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  flex-basis: 33.33333%
 }
 
 .team{
   position: relative;
-  width: 50%;
   display: flex;
   justify-content: center;
 }
@@ -582,6 +614,70 @@ h3{
   padding: 16px 32px;
 }
 
+#grid_offers{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 300px 600px 600px 300px auto;
+  grid-template-areas: 
+  "hea hea hea hea"
+  "se1 se1 se1 se1"
+  "se2 se2 se2 se2"
+  "se3 se3 se3 se3"
+  "se4 se4 se4 se4"
+  "foo foo foo foo";
+}
+
+#curent_and_special{
+  grid-area: se1;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+}
+
+.offers_bttn{
+  background-color: white;
+  border: 2px solid rgb(154, 153, 153);
+  margin: 20px;
+  padding: 10px 10px;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0px 0px 2px 2px rgb(67, 61, 61);
+}
+
+.row{
+  height: 1px;
+  background:black;
+}
+
+#section_special_offer{
+  grid-area: se2;
+  background-color: #bbd0ff;
+  display: flex;
+  flex-direction: column;
+}
+
+#section_offer{
+  display: flex;
+  flex-direction: row;
+}
+
+#section_current_offers{
+  grid-area: se3;
+  background-color: red;
+}
+
+.current{
+  display: flex;
+}
+
+#last_minute{
+  grid-area: se4;
+  background-color: #ffd6ff;
+}
+
 @media screen and (min-width: 700px) {
   #grid_wrapper{
   display: grid;
@@ -609,30 +705,19 @@ h3{
     "foo foo foo foo";
   }
 
-  #grid_about{
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 2fr 2fr 1fr;
-    grid-template-rows: 100px 300px 400px 400px 300px 600px 600px auto;
-    grid-template-areas: 
-    "hea hea hea hea"
-    "se1 se1 se1 se1"
-    "se2 se3 se4 se7"
-    "se2 se5 se6 se7"
-    "se8 se8 se8 se8"
-    "se9 se9 se9 se9"
-    "s10 s10 s10 s10"
-    "foo foo foo foo";
-  }
-
   body {
     font-family: 'Playfair Display', serif;
     line-height: 1.5;
     display: flex;
   }
   
+  .logo{
+    float: left;
+    margin: 2%;
+  }
+  
   nav ul{
-    margin-right: 25%;
+    margin-left: 20%;
     width: 700px;
     flex-wrap: wrap;
   }
@@ -690,4 +775,40 @@ h3{
     font-size: 3.2em;
   }
 
+  #grid_about{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 100px 300px 400px 400px 300px 700px auto auto;
+    grid-template-areas: 
+    "hea hea hea hea"
+    "se1 se1 se1 se1"
+    "se2 se3 se4 se7"
+    "se2 se5 se6 se7"
+    "se8 se8 se8 se8"
+    "se9 se9 se9 se9"
+    "foo foo foo foo";
+  }
+
+  .h2_about{
+    padding: 3rem;
+  }
+
+  .p_about{
+    padding: 1rem;
+  }
+
+  #grid_offers{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-rows: 100px 400px 600px 600px 300px auto;
+    grid-template-areas: 
+    "hea hea hea hea"
+    ".. se1 se1 .."
+    ".. se2 se2 .."
+    ".. se3 se3 .."
+    ".. se4 se4 .."
+    "foo foo foo foo";
+    height: 100vh;
+  }
 }
