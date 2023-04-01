@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VT Projekt</title> <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Index</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <div id="grid_wrapper">     
         <header>
@@ -34,7 +33,7 @@
             <h2 id="h2_section_how">How it works</h2>
             <section id="info_bars">
             <article class="tours">
-                <h2>Buy tickets</h2>
+                <h2>Buy your tickets</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, laudantium!</p>
             </article>
             <article class="tours">
@@ -47,31 +46,23 @@
             </article>
             </section>
         </section>
-        </article>
         <section id="section_tours">
-            <h2 class="w3-center">Tours Around Asia</h2>
-            <div class="w3-content w3-display-container">
-            <img class="mySlides" src="img/attractions/azadi.jpg">
-            <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
-                Iran
-            </div>
-            <img class="mySlides" src="img/offers/burj_khalifa1.jpg">
-            <div class="w3-display-topmidlle w3-large w3-container w3-padding-16 w3-black">
-                Dubai
-            </div>
-            <img class="mySlides" src="img/offers/india.jpg">
-            <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
-                India
-            </div>
-            <img class="mySlides" src="img/offers/turkiet.jpg" style="width:100%">
-            <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
-                Turkey
-            </div>
+            <h2 class="w3-center">POPULAR TOURS IN ASIA</h2>
+            <div class="w3-content w3-display-container" style="max-width:800px">
+                <img class="mySlides" src="img/offers/Iran.jpg" alt="Iran" style="width:100%">
+                <img class="mySlides" src="img/offers/india.jpg" alt="india" style="width:100%">
+                <img class="mySlides" src="img/offers/burj_khalifa1.jpg" alt="dubai" style="width: 100%;">
+                <img class="mySlides" src="img/offers/turkiet.jpg" alt="turkey" style="width: 100%;">
+                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
 
-            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+                </div>
             </div>
-
         </section>
         <footer>
             <div class="waves">
@@ -81,12 +72,12 @@
                 <div class="wave" id="wave4"></div>
             </div>
                 <div class="footer-col">
-                    <div class="social-links">
+                    <ul class="social-links">
                         <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
                         <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
                         <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
                         <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                        </div>
+                    </ul>
                     </div>
                     <ul class="menu">
                         <li><a href="index.html">Home</a></li>
@@ -101,6 +92,5 @@
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </div>
     <script src="js/script.js"></script>
-</body> 
-
+</body>
 </html>

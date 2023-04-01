@@ -12,7 +12,7 @@
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows:  auto auto auto auto auto;
+  grid-template-rows:  100px auto auto auto auto;
   grid-template-areas:
   "hea hea hea hea"
   "sec sec sec sec"
@@ -37,11 +37,8 @@ body {
 header{
   grid-area: hea;
   display: flex;
-  flex-direction: row;
-  height: auto;
-  width: 100%;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
   background-color: #bbd0ff;
 }
@@ -50,7 +47,6 @@ header{
   color: #161313;
   font-size: 35px;
   font-weight: 600;
-  margin-left: 40%;
   font-family: 'playfair display';
 }
 
@@ -74,7 +70,6 @@ header{
 
 nav{
   display: flex;
-  margin-right: 20%;
 }
 
 nav a{
@@ -157,7 +152,6 @@ nav ul{
   border: 2px solid;
   background: #bbd0ff;
   cursor: pointer;
-  box-shadow: 0 0 0 0 rgba(rgb(162, 84, 42), .5);
 }
 
 .pulse:hover {
@@ -170,28 +164,21 @@ nav ul{
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 50px rgba(#d45ab7, 0);
   }
     100% {
     transform: scale(1);
-    box-shadow: 0px 0px 2px 2px rgba(#d45ab7, 0);
   }
 }
 
 footer{
   grid-area: foo;
-  background-color: lightpink; 
-}
-
-.row{
-  display: flex;
-  flex-wrap: wrap;
 }
 
 #info_bars{
   display: flex;
   flex-direction: column;
   margin: 0;
+  width: 550px;
 }
 
 #section_how{
@@ -200,31 +187,40 @@ footer{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #BBD0FF;
+  text-align: center;
 }
 
 #h2_section_how{
   margin-bottom: 80px;
-  margin: 'playfair display';
 }
 
 #section_tours{
   grid-area: se2;
   flex-direction: column;
   display: flex;
+  background-color: #BBD0FF;
+  height: 600px;
 }
 
 .mySlides {
-  display:flex;
-  flex-wrap: wrap;
-  max-height: 100%;
-  object-fit: cover;
+  width: 800px;
+
+}
+
+.w3-left, .w3-right, .w3-badge {
+  cursor:pointer;
+}
+
+.w3-badge {
+  height:13px;width:13px;padding:0;
 }
 
 .tours{
   margin: 50px;
   text-align: center;
   font-size: 30px;
-  background-color: #bbd0ff;
+  background-color: whitesmoke;
   border-radius: 40px;
 }
 
@@ -349,7 +345,7 @@ footer .wave#wave4{
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 100px 400px 400px auto auto;
   grid-template-areas: 
-  "nav nav nav nav"
+  "hea hea hea hea"
   "sec sec sec sec"
   "se1 se1 se1 se1"
   "se2 se2 se2 se2"
@@ -361,6 +357,7 @@ footer .wave#wave4{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #FFD6FF;
 }
 
 #attraction_pic{
@@ -375,6 +372,7 @@ footer .wave#wave4{
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: #FFD6FF;
 }
 
 #article_destinations{
@@ -471,7 +469,7 @@ h3{
   display: grid;
   width: 100vw;
   grid-template-columns: 1fr 2fr 2fr 1fr;
-  grid-template-rows: 100px 200px 400px 400px 400px auto;
+  grid-template-rows: 100px 200px 400px 400px auto auto;
   grid-template-areas: 
   "hea hea hea hea"
   "se1 se1 se1 se1"
@@ -506,6 +504,7 @@ h3{
   text-align: center;
   border: 5px double black;
   flex-wrap: wrap;
+  background-color: #E7C6FF;
 }
 
 .h2_about{
@@ -530,7 +529,6 @@ h3{
   background-image: url("..//img/sunset.jpg");
   background-position: center;
   background-size: cover;
-  
 }
 
 #section_6{
@@ -538,6 +536,7 @@ h3{
   text-align: center;
   flex-direction: row;
   border: 5px double black;
+  background-color: #E7C6FF;
 }
 
 #section_7{
@@ -558,9 +557,10 @@ h3{
 #section_team{
   display: flex;
   grid-area: se9;
-  background-color: #eeeadd;
+  background-color: #E7C6FF;
   flex-direction: column;
   align-items: center;
+  height: 900px;
 }
 
 #section_team1{
@@ -570,7 +570,7 @@ h3{
   justify-content: space-around;
   text-align: center;
   flex-wrap: wrap;
-  flex-basis: 33.33333%
+  flex-basis: 33.33333%;
 }
 
 .team{
@@ -588,11 +588,10 @@ h3{
 }
 
 .staff{
-  width: 200px;
   height: 200px;
+  width: 200px;
+  margin: 10px;
   opacity: 1;
-  display: block;
-  height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -617,7 +616,7 @@ h3{
 #grid_offers{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100px 300px 600px 600px 300px auto;
+  grid-template-rows: 100px 250px 600px auto 350px auto;
   grid-template-areas: 
   "hea hea hea hea"
   "se1 se1 se1 se1"
@@ -629,10 +628,10 @@ h3{
 
 #curent_and_special{
   grid-area: se1;
-  background-color: pink;
   display: flex;
   flex-direction: column;
   padding: 1em;
+  justify-content: center;
 
 }
 
@@ -648,15 +647,33 @@ h3{
 }
 
 .row{
-  height: 1px;
-  background:black;
+  height: 2px;
+  background: black;
+  margin-top: 2%;
 }
 
 #section_special_offer{
   grid-area: se2;
-  background-color: #bbd0ff;
   display: flex;
   flex-direction: column;
+}
+
+#section_special_offer p{
+  padding: 20px;
+}
+
+#article_iran{
+  display: flex;
+  border: 10px ridge black;
+  flex-direction: column;
+  align-items: center;
+  margin: 2% 15% 15% 8%;
+}
+
+#img_iran{
+  width: 60%;
+  display: block;
+  border-radius: 20px;
 }
 
 #section_offer{
@@ -666,7 +683,10 @@ h3{
 
 #section_current_offers{
   grid-area: se3;
-  background-color: red;
+}
+
+h2{
+  margin: 1rem;
 }
 
 .current{
@@ -675,7 +695,58 @@ h3{
 
 #last_minute{
   grid-area: se4;
-  background-color: #ffd6ff;
+}
+
+#last_minute p{
+  margin: 20px;
+}
+
+#cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding: 20px;
+  grid-gap: 40px;
+}
+
+#card1{
+  display: flex;
+  flex-direction: column;
+}
+.container2{
+  position: relative;
+  clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+}
+
+#section_current_offers img{
+  width: 100%;
+  display: block;
+  border-radius: 20px 20px 0 0;
+}
+
+.container2:after{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px 20px 0 0;
+  opacity: 0.7;
+}
+
+.details{
+  padding: 20px 10px;
+}
+
+.details>h3{
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 0 15px 0;
+}
+
+.details p{
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
 }
 
 @media screen and (min-width: 700px) {
@@ -711,13 +782,17 @@ h3{
     display: flex;
   }
   
+  header{
+    flex-direction: row;
+  }
+
   .logo{
     float: left;
     margin: 2%;
   }
   
   nav ul{
-    margin-left: 20%;
+    margin-left: 30%;
     width: 700px;
     flex-wrap: wrap;
   }
@@ -741,8 +816,7 @@ h3{
   #section_how{
     grid-area: se1;
     flex-direction: column;
-    text-align: center;
-  }
+    }
 
   #h2_section_how{
     margin-bottom: 80px;
@@ -751,6 +825,7 @@ h3{
   #info_bars{
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
 
   .tours{
@@ -779,7 +854,7 @@ h3{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 2fr 2fr 1fr;
-    grid-template-rows: 100px 300px 400px 400px 300px 700px auto auto;
+    grid-template-rows: 100px 300px 400px 400px 300px auto auto;
     grid-template-areas: 
     "hea hea hea hea"
     "se1 se1 se1 se1"
@@ -798,10 +873,24 @@ h3{
     padding: 1rem;
   }
 
+  #section_team{
+    height: 1200px;
+  }
+
+  #meet_the_team{
+    padding: 2%;
+    font-size: 30px;
+  }
+  .staff{
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+  }
+  
   #grid_offers{
     display: grid;
     grid-template-columns: 1fr 3fr 3fr 1fr;
-    grid-template-rows: 100px 400px 600px 600px 300px auto;
+    grid-template-rows: 100px 400px auto auto 400px auto;
     grid-template-areas: 
     "hea hea hea hea"
     ".. se1 se1 .."
