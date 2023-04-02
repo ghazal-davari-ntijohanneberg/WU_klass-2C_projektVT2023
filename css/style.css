@@ -12,7 +12,7 @@
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows:  100px auto auto auto auto;
+  grid-template-rows:  110px auto auto auto auto;
   grid-template-areas:
   "hea hea hea hea"
   "sec sec sec sec"
@@ -37,17 +37,15 @@ body {
 header{
   grid-area: hea;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
   background-color: #bbd0ff;
 }
 
 .logo{
-  color: #161313;
-  font-size: 35px;
-  font-weight: 600;
-  font-family: 'playfair display';
+  height: 80px;
+  width: 200px;
 }
 
 /* .subscribe{
@@ -343,7 +341,7 @@ footer .wave#wave4{
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100px 400px 400px auto auto;
+  grid-template-rows: 110px 400px 400px auto auto;
   grid-template-areas: 
   "hea hea hea hea"
   "sec sec sec sec"
@@ -361,9 +359,10 @@ footer .wave#wave4{
 }
 
 #attraction_pic{
-  width: 500px;
-  height: 300px;
+  width: 600px;
+  height: 350px;
   border-radius: 20px;
+  border: 3px outset purple;
 }
 
 #section_destinations{
@@ -388,7 +387,7 @@ h3{
 
 .destination_bttn{
   background-color: white;
-  border: 2px solid rgb(154, 153, 153);
+  border: 2px solid purple;
   border-radius: 10px;
   margin: 50px;
   padding: 15px 60px;
@@ -400,14 +399,14 @@ h3{
 }
 
 .destination_bttn:hover{
-  background-color:#eeeadd;
+  background-color: #f685c5;
   transition: 0.6s all ease-in-out;
 }
 
 .destination_bttn:focus{
   outline-color: transparent;
   outline-style:solid;
-  box-shadow: 0 0 0 4px #dab455;
+  box-shadow: 0 0 0 4px #cca8df;
 }
 
 #section_categories{
@@ -417,6 +416,7 @@ h3{
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #categories{
@@ -443,14 +443,12 @@ h3{
 
 .read_more_bttn{
   background-color: white;
-  border: 2px solid rgb(154, 153, 153);
-  border-radius: 10px;
-  margin: 50px;
-  padding: 15px 30px;
+  border: 2px solid purple;
+  margin: 30px;
+  padding: 10px 30px;
   color: black;
   cursor: pointer;
   font-size: 15px;
-  border-radius: 10px;
   box-shadow: 0px 0px 2px 2px rgb(67, 61, 61);
 }
 
@@ -469,7 +467,7 @@ h3{
   display: grid;
   width: 100vw;
   grid-template-columns: 1fr 2fr 2fr 1fr;
-  grid-template-rows: 100px 200px 400px 400px auto auto;
+  grid-template-rows: 110px 200px 400px 400px auto auto;
   grid-template-areas: 
   "hea hea hea hea"
   "se1 se1 se1 se1"
@@ -560,7 +558,6 @@ h3{
   background-color: #E7C6FF;
   flex-direction: column;
   align-items: center;
-  height: 900px;
 }
 
 #section_team1{
@@ -616,7 +613,7 @@ h3{
 #grid_offers{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 100px 250px 600px auto 350px auto;
+  grid-template-rows: 110px 250px 600px auto 350px auto;
   grid-template-areas: 
   "hea hea hea hea"
   "se1 se1 se1 se1"
@@ -644,6 +641,14 @@ h3{
   cursor: pointer;
   font-size: 20px;
   box-shadow: 0px 0px 2px 2px rgb(67, 61, 61);
+}
+
+.offers_bttn a{
+  color: black;
+}
+
+.offers_bttn a:hover{
+  color: #3586ff;
 }
 
 .row{
@@ -718,7 +723,7 @@ h2{
 }
 
 #section_current_offers img{
-  width: 100%;
+  width: 80%;
   display: block;
   border-radius: 20px 20px 0 0;
 }
@@ -734,7 +739,7 @@ h2{
 }
 
 .details{
-  padding: 20px 10px;
+  padding: 10px 5px;
 }
 
 .details>h3{
@@ -788,13 +793,13 @@ h2{
 
   .logo{
     float: left;
-    margin: 2%;
+    margin-left: 0;
   }
   
   nav ul{
-    margin-left: 30%;
     width: 700px;
     flex-wrap: wrap;
+    margin-left: 20%;
   }
 
  nav a{
@@ -866,11 +871,11 @@ h2{
   }
 
   .h2_about{
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .p_about{
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   #section_team{
