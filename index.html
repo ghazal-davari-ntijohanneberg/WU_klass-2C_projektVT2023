@@ -7,56 +7,65 @@
     <title>Index</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div id="grid_wrapper">     
+        <!-- <img class="logo" src="img/logo2.png" alt="logo of traveling site"> -->
         <header>
-            <img class="logo" src="img/logo2.png" alt="logo">
-            <nav> 
+            <a class="logo" href="#">Travelocity</a>
+   
+            <nav>
                 <ul id="link_list">
                     <li><a class="active" href="index.html">Home</a></li>
                     <li><a href="tours.html">Tours</a></li>
                     <li><a href="offers.html">Special offers</a></li>
                 </ul>
-            </nav> 
-        </header>
-        <section id="plane_picture">
-            <div class="container">
-                <div class="intro-text">
-                    <div class="intro-lead-in">Hello Everybody</div>
-                    <div class="intro-heading">This will change your life</div>
-                    <a href="#" class="pulse">Subscribe</a>
+                <div id="burger">
+                    <div id="burger_line_1"></div>
+                    <div id="burger_line_2"></div>
+                    <div id="burger_line_3"></div>
                 </div>
-            </div>
+            </nav>
+        </header> 
+
+        <section id="plane_picture">
+            <section class="container1">
+                <section class="intro-text">
+                    <section class="intro-lead-in">Hello Everybody</section>
+                    <section class="intro-heading">This will change your life</section>
+                    <a href="#" class="pulse">Subscribe</a>
+                </section>
+            </section>
         </section>      
         <section id="section_how">
             <h2 id="h2_section_how">How it works</h2>
             <section id="info_bars">
             <article class="tours">
-                <h2>Buy your tickets</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, laudantium!</p>
+                <h2 class="h2_info">Buy your tickets</h2>
+                <p class="p_info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, laudantium!</p>
             </article>
             <article class="tours">
-                <h2>Fly</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, expedita.</p>
+                <h2 class="h2_info">Fly</h2>
+                <p class="p_info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, expedita.</p>
             </article>
             <article class="tours">
-                <h2>Enjoy</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, error.</p>
+                <h2 class="h2_info">Enjoy</h2>
+                <p class="p_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, error.</p>
             </article>
             </section>
         </section>
         <section id="section_tours">
             <h2 class="w3-center">TOURS ARE TO THESE CONTINETS</h2>
             <div class="w3-content w3-display-container" style="max-width:800px">
-                <img class="mySlides" src="img/offers/asia.jpg" alt="Iran" style="width:100%">
-                <img class="mySlides" src="img/offers/europe.jpg" alt="india" style="width:100%">
-                <img class="mySlides" src="img/offers/america.jpg" alt="dubai" style="width: 100%;">
-                <img class="mySlides" src="img/offers/africa.jpg" alt="turkey" style="width: 100%;">
+                <img class="mySlides" src="img/offers/asia.jpg" alt="picture of asia" style="width:100%">
+                <img class="mySlides" src="img/offers/europe.jpg" alt="picture of europe" style="width:100%">
+                <img class="mySlides" src="img/offers/america.jpg" alt="picture of america" style="width: 100%;">
+                <img class="mySlides" src="img/offers/africa.jpg" alt="picture of africa" style="width: 100%;">
                 <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
 
-                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                <div id="left-hover" class="w3-left w3-hover-text-khaki">&#10094;</div>
+                <div id="right-hover" class="w3-right w3-hover-text-khaki">&#10095;</div>
                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                 <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
@@ -71,22 +80,22 @@
                 <div class="wave" id="wave3"></div>
                 <div class="wave" id="wave4"></div>
             </div>
-                <div class="footer-col">
-                    <ul class="social-links">
-                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
-                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
-                        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                    </ul>
-                    </div>
-                    <ul class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="about.html">Team</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+            <div class="footer-col">
+                <ul class="social-links">
+                    <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                </ul>
                 </div>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="about.html">Team</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
         </footer>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

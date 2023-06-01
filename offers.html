@@ -11,17 +11,22 @@
 </head>
 <body>
     <div id="grid_offers">
+        <!-- <img class="logo" src="img/logo2.png" alt="logo of traveling site"> -->
         <header>
-            <img class="logo" src="img/logo2.png" alt="logo">
-            <nav> 
-                <ul
-                    id="link_list">       
+            <a class="logo" href="#">Travelocity</a>  
+            <nav>
+                <ul id="link_list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="tours.html">Tours</a></li>
-                    <li><a href="offers.html" class="active">Special offers</a></li>
+                    <li><a class="active" href="offers.html">Special offers</a></li>
                 </ul>
-            </nav> 
-        </header>
+                <div id="burger">
+                    <div id="burger_line_1"></div>
+                    <div id="burger_line_2"></div>
+                    <div id="burger_line_3"></div>
+                </div>
+            </nav>
+        </header> 
         <section id="curent_and_special">
             <h1>Special offers & current deals</h1>
             <p>Here you can see all current offers as well as information about our special offers</p>
@@ -36,7 +41,7 @@
             <section id="section_offer">
                 <article id="article_iran">
                     <h3>Iran</h3>
-                    <img id="img_iran" src="img/offers/iran.jpg" alt="iran">
+                    <img id="img_iran" src="img/offers/iran.jpg" alt="picture of iran">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae beatae provident debitis, expedita in porro odit labore sapiente ullam corrupti, a recusandae aut! Voluptatum amet, quod sint perferendis ad eos.</p>
                 </article>
             </section>
@@ -46,7 +51,7 @@
             <section id="cards">
                 <article id="card1">
                     <div class="container2">
-                        <img src="img/offers/india.jpg" alt="india">
+                        <img src="img/offers/india.jpg" alt="picture of india">
                     </div>
                 </article>
                 <div class="details">
@@ -55,7 +60,7 @@
                 </div>
                 <article id="card2">
                     <div class="container2">
-                        <img src="img/offers/burj_khalifa1.jpg" alt="india">
+                        <img src="img/offers/burj_khalifa1.jpg" alt=" picture of burj khalifa">
                     </div>
                 </article>
                 <div class="details">
@@ -64,7 +69,7 @@
                 </div>
                 <article id="card3">
                     <div class="container2">
-                        <img src="img/offers/spain.jpg" alt="india">
+                        <img src="img/offers/spain.jpg" alt="picture of spain">
                     </div>
                 </article>
                 <div class="details">
@@ -73,7 +78,7 @@
                 </div>
                 <article id="card4">
                     <div class="container2">
-                        <img src="img/offers/turkiet.jpg" alt="india">
+                        <img src="img/offers/turkiet.jpg" alt="picture of turkey">
                     </div>
                 </article>
                 <div class="details">
@@ -86,8 +91,8 @@
             <h2>Last minute offers!</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit vitae velit explicabo enim modi quam ad aperiam vero quo temporibus, recusandae adipisci minima dolorem accusantium magni eaque tenetur repudiandae, harum blanditiis accusamus excepturi?</p>
             <section>
-                <button class="offers_bttn">Place</button>
-                <button class="offers_bttn">Departure</button>
+                <button class="offers_bttn">Place</button> <input type="text" id="fname" name="fname">
+                <button class="offers_bttn">Departure</button> <input type="text" id="fname" name="fname">
             </section>
         </section>
         <footer>
@@ -116,5 +121,6 @@
         </footer>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
