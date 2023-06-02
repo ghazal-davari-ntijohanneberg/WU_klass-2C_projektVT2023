@@ -13,7 +13,6 @@
   letter-spacing: 0.1875rem;
   color: black;
   font-weight: bold;
-  font-family: 'Playfair Display',serif;
   font-size: 1.25rem;
   text-transform: uppercase;
 }
@@ -30,7 +29,7 @@
 #link_list {
   background-color: #BBD0FF;
   height: 400px;
-  width: 200px;
+  width: 230px;
   position: absolute;
   top: -400px;
   right: 0px;
@@ -50,7 +49,8 @@
 }
 
 .link_list_visible {
-  transform: translateY(500px)
+  transform: translateY(500px);
+  z-index: 3;
 }
 
 .burger_in_x_form #burger_line_2 {
@@ -361,13 +361,13 @@ footer .wave#wave4{
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 110px 400px auto auto auto;
+  grid-template-rows: 110px 400px auto auto auto auto;
   grid-template-areas: 
   "hea hea hea hea"
   "sec sec sec sec"
   "se1 se1 se1 se1"
   "se2 se2 se2 se2"
-  
+  "se3 se3 se3 se3"
   "foo foo foo foo";
 }
 
@@ -382,13 +382,13 @@ footer .wave#wave4{
 }
 
 .bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4);
   color: white;
   font-weight: bold;
   border: 3px solid #f1f1f1;
   position: absolute;
-  top: 50%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -401,7 +401,7 @@ footer .wave#wave4{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 20px;
+  padding: 10px 30px;
   font-size: 16px;
   font-weight: bold;
   background-color: #caf0f8;
@@ -411,11 +411,11 @@ footer .wave#wave4{
 }
 
 .destination_btn1{
-  margin: 30px;
+  margin: 10px 0 10px 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 20px;
+  padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
   background-color: #e9eba3;
@@ -441,7 +441,7 @@ footer .wave#wave4{
 
 #travel-tips {
   padding: 20px;
-  grid-area: se2;
+  grid-area: se3;
   background-color: #caf0f8;
 }
 
@@ -505,13 +505,21 @@ h3{
   padding: 20px;
 }
 
-#categories {
+.categories {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  overflow: scroll;
   height: 100%;
+}
+
+#section-categories2{
+  grid-area: se2;
+  background-color: #caf0f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
 #categories::-webkit-scrollbar{
@@ -528,7 +536,37 @@ h3{
 .button_section{
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 1rem;
+}
+
+#button_section1{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#button_section2{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#button_section3{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#button_section4{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+#button_section5{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .card:hover {
@@ -571,8 +609,8 @@ h3{
   display: grid;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
-  grid-template-rows: 110px 300px 300px 300px 300px 300px 300px auto 500px auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 110px auto 300px 300px 300px 300px 300px auto auto auto auto;
   grid-template-areas: 
   "hea hea hea hea"
   "se1 se1 se1 se1"
@@ -589,15 +627,13 @@ h3{
 
 #section_1{
   grid-area: se1;
-  background-image: url("..//img/persons/about.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
-  flex-direction: row;
 }
 
+#img-about{
+  width: 100%;
+  height: 320px;
+}
 #section_2{
   margin-top: 3rem;
   grid-area: se2;
@@ -608,10 +644,9 @@ h3{
   margin-top: 3rem;
   grid-area: se3;
   flex-direction: row;
-  text-align: center;
   border: 5px double black;
   flex-wrap: wrap;
-  background-color: #E7C6FF;
+  background-color: #caf0f8;
 }
 
 .h2_about{
@@ -642,10 +677,9 @@ h3{
 
 #section_6{
   grid-area: se6;
-  text-align: center;
   flex-direction: row;
   border: 5px double black;
-  background-color: #E7C6FF;
+  background-color: #caf0f8;
   flex-wrap: wrap;
   margin-top: 2rem;
 }
@@ -674,18 +708,23 @@ h3{
 
 #article_services{
   display: flex;
-  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
 }
 
 #article_services h3{
   font-size: 1.5em;
 }
 
+.service2{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px 20px;
+  margin-left: 20px;
+}
+
 .service{
-  width: 300px;
+  width: 190px;
   height: 400px;
   box-shadow:  0 8px 8px 0 rgba(0,0,0,0.2);
   flex-wrap: wrap;
@@ -694,48 +733,49 @@ h3{
 .img-services{
   width: 100%;
   height: auto;
-  margin-right: 20px;
 }
 
 #section_11{
   grid-area: s11;
   display: flex;
   flex-direction: column;
-  position: relative;
-  max-width: 100%;
+  text-align: center;
+}
+
+#reviews{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_review p{
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
+
+.img-review{
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  width: 300px;
+}
+
+.section_review{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 
-#section_review{
-  display: flex;
-  flex-direction: row;
-}
-
-#slide{
-  background-image: url("../img/persons/review.jpg");
-  background-position: center;
-  background-size: cover;
-  height: 200px;
-  width: 300px;
-  display: none;
-}
-
-.caption{
+.p-review{
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 10px;
-  font-size: 18px;
-  display: none;
 }
 
 #section_team{
   display: flex;
   grid-area: se9;
-  background-color: #E7C6FF;
+  background-color: #caf0f8;
   flex-direction: column;
   align-items: center;
 }
@@ -952,12 +992,13 @@ h2{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 100px 400px 600px auto auto;
+    grid-template-rows: 110px 400px auto auto auto auto;
     grid-template-areas: 
     "hea hea hea hea"
     "sec sec sec sec"
     "se1 se1 se1 se1"
     "se2 se2 se2 se2"
+    "se3 se3 se3 se3"
     "foo foo foo foo";
   }
 
@@ -980,12 +1021,51 @@ h2{
   }
 
   .link_list_visible {
-      transform: translateY(0px)
+    transform: translateY(0px);
   }
 
   .logo{
     float: left;
     margin-left: 10px;
+  }
+
+  .destination_btn1{
+    margin-right: 20px;
+  }
+
+  .bg-text{
+    top: 50%;
+    padding: 50px;
+  }
+
+  #button_section1{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #button_section2{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #button_section3{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #button_section4{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #button_section5{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
   }
 
   nav a:hover{
@@ -999,6 +1079,9 @@ h2{
     background-color: #fff;
     border-radius: 30px;
     padding: 10px;
+  }
+  .tip-content p {
+    padding-right: 60px;
   }
 
   #Plane_picture .intro-text{
@@ -1066,7 +1149,7 @@ h2{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 2fr 2fr 1fr;
-    grid-template-rows: 110px 300px 300px 300px 300px 500px 500px auto auto auto auto;
+    grid-template-rows: 110px 300px 300px 300px 300px auto auto auto auto;
     grid-template-areas: 
     "hea hea hea hea"
     "se1 se1 se1 se1"
@@ -1080,11 +1163,12 @@ h2{
   }
 
   .h2_about{
-    padding: 2rem;
+    padding: 1rem;
+    margin-left: 23%;
   }
 
   .p_about{
-    padding: 0.5rem;
+    padding: 0 20px 0 30px;
   }
 
   #section_team{
@@ -1101,22 +1185,17 @@ h2{
     margin: 10px;
   }
 
-  #section_6{
-    grid-area: se6;
-    text-align: center;
-    flex-direction: row;
-    border: 5px double black;
-    background-color: #E7C6FF;
-    flex-wrap: wrap;
-  }
-
   #section_4{
     margin-top: 3rem;
     margin-bottom: 0;
   }
 
   #section_6{
-    margin-top: 10px;
+    margin-top: 0;
+  }
+
+  #section_5{
+    margin-top: 0;
   }
 
   #article_services{
@@ -1125,9 +1204,38 @@ h2{
   }
 
   .service{
-    height: 450px;
+    height: 480px;
+    width: 280px;
+    text-align: left;
   }
   
+  .h3_services{
+    padding: 0.5rem;
+  }
+
+  #p_services{
+    padding: 0.5rem;
+  }
+
+  #p_service2{
+    margin-top: 11%;
+    padding: 0.5rem;
+  }
+
+  #p_service1{
+    margin-top: 11%;
+    padding: 0.5rem;
+  }
+
+  #p_service3{
+    margin-top: 11%;
+    padding: 0.5rem;
+  }
+
+  #section_reviews{
+    flex-direction: row;
+  }
+
   #grid_offers{
     display: grid;
     grid-template-columns: 1fr 3fr 3fr 1fr;
